@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_222015) do
     t.string "name"
     t.string "description"
     t.bigint "location_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.string "day"
     t.string "icon"
     t.boolean "completed"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_04_10_222015) do
     t.string "last_name"
     t.string "email"
     t.string "password_digest"
-    t.bigint "location_id", null: false
+    t.bigint "location_id"
     t.index ["location_id"], name: "index_users_on_location_id"
   end
 
