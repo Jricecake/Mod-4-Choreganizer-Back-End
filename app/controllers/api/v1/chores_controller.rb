@@ -1,6 +1,5 @@
 class Api::V1::ChoresController < ApplicationController
 
-
     def show
         chore = Chore.find(params[:id])
         render json: chore
