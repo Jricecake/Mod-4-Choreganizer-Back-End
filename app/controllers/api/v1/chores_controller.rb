@@ -1,22 +1,15 @@
 class Api::V1::ChoresController < ApplicationController
 
-
-    def show
-        chore = Chore.find(params[:id])
-        render json: chore
-    end
-
-
     def create
         chore = Chore.create(chore_params)
-        render json: chore
+        render json: {chore: ChoreSerializer.new(chore)}
     end
 
     def update
         chore = Chore.find(params[:id])
-        if chore.valid?
-            chore.update(chore_params)
-            render json: chore
+        chore.update(chore_params)
+        if chore.valid? 
+            render json: { chore: ChoreSerializer.new(chore) }
         else
             render json: { error: 'failed to update chore' }, status: :not_acceptable
         end
