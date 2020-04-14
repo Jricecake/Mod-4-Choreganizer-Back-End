@@ -1,17 +1,11 @@
 class Api::V1::UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
-  
-
-    def show
-        user = User.find(params[:id])
-        render json: user
-    end
 
     def update
         user = User.find(params[:id])
-        if user.valid?
-            user.update(user_params)
-            render json: user
+        user.update(user_params)
+        if user.valid?  
+            render json: { user: UserSerializer.new(user) }
         else
             render json: { error: 'failed to update user' }, status: :not_acceptable
         end

@@ -1,15 +1,12 @@
 class Api::V1::LocationsController < ApplicationController
-
-
     def show
         location = Location.find(params[:id])
-        render json: location
+        render json: {location: LocationSerializer.new(location)}
     end
-
 
     def create
         location = Location.create(location_params)
-        render json: location 
+        render json: {location: LocationSerializer.new(location)}
     end
 
     def destroy
@@ -21,7 +18,7 @@ class Api::V1::LocationsController < ApplicationController
     private
 
     def location_params
-        params.require(:location).permit(:name)
+        params.require(:location).permit(:name, :creator)
     end
 
 end
