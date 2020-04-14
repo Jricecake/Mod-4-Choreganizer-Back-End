@@ -11,14 +11,14 @@ class Api::V1::AuthController < ApplicationController
         end
       end
     
-    #   def show
-    #     user = User.find_by(id: user_id)
-    #     if logged_in?
-    #       render json: { id: user.id, username: user.username }
-    #     else
-    #       render json: {error: 'No user could be found'}, status: 401
-    #     end
-    #   end
+      def show
+        user = User.find_by(id: user_id)
+        if logged_in?
+          render json: { user: UserSerializer.new(user) }
+        else
+          render json: {error: 'No user could be found'}, status: 401
+        end
+      end
 
       def user_login_params
         params.require(:user).permit(:username, :password)
