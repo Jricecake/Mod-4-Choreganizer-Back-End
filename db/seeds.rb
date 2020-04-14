@@ -16,6 +16,6 @@ kim = User.create(username: "kim", password: "123", first_name:"Kim", last_name:
 diana = User.create(username: "diana", password: "123", first_name:"Diana", last_name:"Wendt", email:"diana@gmail.com", location_id: house.id)
 jonny = User.create(username: "jonny", password: "123", first_name:"Jonny", last_name:"Riecke", email:"jonny@gmail.com", location_id: house.id)
 
-sweep = Chore.create(name: "Sweep", description: "Sweep and mop the kitchen", location_id: house.id, user_id: kim.id, day: "MON", icon: "nil", complete: false)
-vacuum = Chore.create(name: "Vacuum", description: "Vaccuum basement and stairs", location_id: house.id, user_id: diana.id, day: "TUE", icon: "nil", complete: false)
-water = Chore.create(name: "Water", description: "Water the backyard plants", location_id: house.id, user_id: jonny.id, day: "WED", icon: "nil", complete: false)
+sweep = Chore.create(name: "Sweep", description: "Sweep and mop the kitchen", location_id: house.id, user_id: kim.id, day: "MON", icon: "nil", completed: false)
+vacuum = Chore.create(name: "Vacuum", description: "Vaccuum basement and stairs", location_id: house.id, user_id: diana.id, day: "TUE", icon: "nil", completed: false)
+water = Chore.create(name: "Water", description: "Water the backyard plants", location_id: house.id, user_id: jonny.id, day: "WED", icon: "nil", completed: false)
