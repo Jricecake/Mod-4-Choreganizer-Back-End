@@ -10,7 +10,7 @@ User.destroy_all
 Location.destroy_all
 Chore.destroy_all
 
-house = Location.create(name: "Cardboard House")
+house = Location.create(name: "Cardboard House", creator: "6")
 
 kim = User.create(username: "kim", password: "123", first_name:"Kim", last_name:"Khong", email:"kim@gmail.com", location_id: house.id)
 diana = User.create(username: "diana", password: "123", first_name:"Diana", last_name:"Wendt", email:"diana@gmail.com", location_id: house.id)
