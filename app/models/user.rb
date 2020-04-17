@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   belongs_to :location, optional: true
-  has_many :chores
+  has_many :chores, dependent: :nullify
 
   has_secure_password
 
