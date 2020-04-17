@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
           if user.valid?  
             render json: { user: UserSerializer.new(user) }
           else
-            render json: { error: 'failed to update user' }, status: :not_acceptable
+            render json: { error: user.errors.full_messages }, status: :not_acceptable
           end
         else
           render json: { error: 'Not a valid house id. Please try again'}
