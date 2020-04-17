@@ -3,11 +3,15 @@ class Api::V1::UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        user.update(user_params)
-        if user.valid?  
+        if ( !user_params[:location_id] || Location.find_by(id: user_params[:location_id]) )
+          user.update(user_params)
+          if user.valid?  
             render json: { user: UserSerializer.new(user) }
-        else
+          else
             render json: { error: 'failed to update user' }, status: :not_acceptable
+          end
+        else
+          render json: { error: 'Not a valid house id. Please try again'}
         end
     end
 
