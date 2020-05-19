@@ -65,7 +65,7 @@ GEM
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
-    byebug (11.1.1)
+    byebug (11.1.2)
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.6)
@@ -176,7 +176,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.6.1p33
+   ruby 2.6.3p62
 
 BUNDLED WITH
-   2.1.4
+   1.17.2
